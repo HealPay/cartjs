@@ -1,5 +1,16 @@
 <html>
 <head>
-  <script src="../cart.js"></script>
+  <link rel="stylesheet" href="mocha.css" />
 </head>
+<body>
+  <div id="mocha"></div>
+  <script src="mocha.js"></script>
+  <script>mocha.setup('bdd')</script>
+  <script src="../cart.js"></script>
+  <script src="test.cart.js"></script>
+  <script>
+    mocha.checkLeaks();
+    mocha.run();
+  </script>
+</body>
 </html>
