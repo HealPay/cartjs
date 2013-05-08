@@ -100,7 +100,8 @@
   Events.bind   = Events.on;
   Events.unbind = Events.off;
   
-  var CookieSessionStore = {
+  // This needs revisiting. It used to store a sessionID. Should instead store encoded JSON blob somehow and provide convenience methods to allow the Cart class easy modification of line items. The interface/API defined here will be the same used for localStorage.
+  var CookieStore = {
     isSet: function() {
       return this.get() != undefined ? true : false;
     },
@@ -132,7 +133,7 @@
   }
   
   var Cart = extend(Events, {
-    store: CookieSessionStore,
+    store: CookieStore,
     items: {},
     grab: function() {
     },
