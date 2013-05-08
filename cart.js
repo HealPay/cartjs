@@ -131,7 +131,8 @@
   var Item = {
     
   }
-  
+
+  // probably don't need grab, create, find, drop. These were legacy from implementation with cartrb.  
   var Cart = extend(Events, {
     store: CookieStore,
     items: {},
